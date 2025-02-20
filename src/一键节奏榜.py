@@ -1823,10 +1823,6 @@ if not skip_download:
     
     url = f"https://royaleapi.com/cards/popular?time={time}&mode=grid&cat={mode}&sort=usage"
     download_webpage(url, "royale_api.html")
-else:
-    url = "https://royaleapi.com/cards/popular?cat=TopRanked1000&mode=grid&time=7d&sort=rating"
-    download_webpage(url, "royale_api.html")
-    
 
 ############################################################
 #                    步骤2：分析卡牌数据
@@ -1931,9 +1927,10 @@ with open("Card_Tier.html", "w", encoding="utf-8") as file:
 print("HTML网页已生成，文件名为：Card_Tier.html")
 
 # 清理临时文件
-try:
-    os.remove("royale_api.html")
-    print("已删除临时文件：royale_api.html")
-except Exception as e:
-    print(f"删除文件时发生错误：{e}")
+if not skip_download:
+    try:
+        os.remove("royale_api.html")
+        print("已删除临时文件：royale_api.html")
+    except Exception as e:
+        print(f"删除文件时发生错误：{e}")
 
