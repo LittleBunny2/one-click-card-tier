@@ -1927,7 +1927,7 @@ with open("Card_Tier.html", "w", encoding="utf-8") as file:
 print("HTML网页已生成，文件名为：Card_Tier.html")
 
 # 清理临时文件
-if not skip_download:
+if (not skip_download) or auto_mode:
     try:
         os.remove("royale_api.html")
         print("已删除临时文件：royale_api.html")
