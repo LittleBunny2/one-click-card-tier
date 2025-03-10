@@ -197,7 +197,7 @@ translations = {
     "Lumberjack": ("樵夫", Strict_System_Card),
     "Flying Machine": ("飞机", Strict_System_Card),
     "Wall Breakers": ("攻城炸弹人", Win_Condition),
-    "Archer Queen": ("女皇", Strict_System_Card),
+    "Archer Queen": ("女皇", God_of_Change),
     "Hog Rider": ("野猪", Win_Condition),
     "Rocket": ("火箭", Strict_System_Card),
     "Inferno Tower": ("地狱塔", God_of_Change),
@@ -270,6 +270,7 @@ translations = {
     "Rune Giant": ("符文巨人", Strict_System_Card),
     "Lumberjack Evolution": ("觉醒樵夫", God_of_Change),
     "Berserker": ("狂战士", Universal_cards1),
+    "Hunter Evolution": ("觉醒猎人", Strict_System_Card),
 }
 
 
@@ -748,9 +749,11 @@ api_data= {
       "name": "Hunter",
       "id": 26000044,
       "maxLevel": 9,
+      "maxEvolutionLevel": 1,
       "elixirCost": 4,
       "iconUrls": {
-        "medium": "https://api-assets.clashroyale.com/cards/300/VNabB1WKnYtYRSG7X_FZfnZjQDHTBs9A96OGMFmecrA.png"
+        "medium": "https://api-assets.clashroyale.com/cards/300/VNabB1WKnYtYRSG7X_FZfnZjQDHTBs9A96OGMFmecrA.png",
+        "evolutionMedium": "https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v4-aba2f5ae/hunter-ev1.png"
       },
       "rarity": "epic"
     },
@@ -1614,6 +1617,8 @@ new_html_template = """
       width: 75px;
       height: auto;
       object-fit: cover;
+      cursor: pointer;
+      
     }}
     .unranked-cards {{
       padding: 10px;
