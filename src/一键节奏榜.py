@@ -275,7 +275,7 @@ translations = {
 
 
 # Api数据
-api_data= {
+api_data={
   "items": [
     {
       "name": "Knight",
@@ -753,7 +753,7 @@ api_data= {
       "elixirCost": 4,
       "iconUrls": {
         "medium": "https://api-assets.clashroyale.com/cards/300/VNabB1WKnYtYRSG7X_FZfnZjQDHTBs9A96OGMFmecrA.png",
-        "evolutionMedium": "https://cdns3.royaleapi.com/cdn-cgi/image/w=150,h=180,format=auto/static/img/cards/v4-aba2f5ae/hunter-ev1.png"
+        "evolutionMedium": "https://api-assets.clashroyale.com/cardevolutions/300/VNabB1WKnYtYRSG7X_FZfnZjQDHTBs9A96OGMFmecrA.png"
       },
       "rarity": "epic"
     },
