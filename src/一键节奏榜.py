@@ -271,6 +271,8 @@ translations = {
     "Lumberjack Evolution": ("觉醒樵夫", God_of_Change),
     "Berserker": ("狂战士", Universal_cards1),
     "Hunter Evolution": ("觉醒猎人", Strict_System_Card),
+    "Executioner Evolution": ("觉醒屠夫", Strict_System_Card),
+    "Boss Bandit": ("刺客头领", Building_The_Core),
 }
 
 
@@ -761,9 +763,11 @@ api_data={
       "name": "Executioner",
       "id": 26000045,
       "maxLevel": 9,
+      "maxEvolutionLevel": 1,
       "elixirCost": 5,
       "iconUrls": {
-        "medium": "https://api-assets.clashroyale.com/cards/300/9XL5BP2mqzV8kza6KF8rOxrpCZTyuGLp2l413DTjEoM.png"
+        "medium": "https://api-assets.clashroyale.com/cards/300/9XL5BP2mqzV8kza6KF8rOxrpCZTyuGLp2l413DTjEoM.png",
+        "evolutionMedium": "https://api-assets.clashroyale.com/cardevolutions/300/9XL5BP2mqzV8kza6KF8rOxrpCZTyuGLp2l413DTjEoM.png"
       },
       "rarity": "epic"
     },
@@ -1160,6 +1164,16 @@ api_data={
         "medium": "https://api-assets.clashroyale.com/cards/300/NA6W8S1JBYBlOPwD3dNvJLFvVDKq-UuBs_J3i3ewLFI.png"
       },
       "rarity": "common"
+    },
+    {
+      "name": "Boss Bandit",
+      "id": 26000103,
+      "maxLevel": 4,
+      "elixirCost": 6,
+      "iconUrls": {
+        "medium": "https://api-assets.clashroyale.com/cards/300/nuceG9o7rAyvyc7D3sp2QSiRYtSOEgraq0NJkDf729s.png"
+      },
+      "rarity": "champion"
     },
     {
       "name": "Cannon",
@@ -1938,5 +1952,4 @@ if (not skip_download) or auto_mode:
         print("已删除临时文件：royale_api.html")
     except Exception as e:
         print(f"删除文件时发生错误：{e}")
-
 
