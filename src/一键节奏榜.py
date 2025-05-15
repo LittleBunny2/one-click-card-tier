@@ -28,9 +28,9 @@ def download_webpage(url, output_file):
 
 # 函数：评分排名
 def classify_rating(rating):
-    if rating >= 7.2:
+    if rating >= 7:
         return "超模真神"
-    elif 7.2 > rating >= 3.8:
+    elif 7 > rating >= 3.8:
         return "版本强势"
     elif 3.8 > rating >= 1.2:
         return "中规中矩"
@@ -226,7 +226,7 @@ translations = {
     "Skeleton Army": ("骷髅海", Strict_System_Card),
     "Freeze": ("冰冻", Strict_System_Card),
     "Electro Wizard": ("电法", God_of_Change),
-    "Monk": ("武僧", Strict_System_Card),
+    "Monk": ("武僧", Building_The_Core),
     "Battle Healer": ("天使", Strict_System_Card),
     "Battle Ram Evolution": ("觉醒攻城锤", Win_Condition),
     "Electro Giant": ("电胖", Win_Condition),
@@ -245,7 +245,7 @@ translations = {
     "Goblin Giant Evolution": ("觉醒绿胖", Win_Condition),
     "Goblin Demolisher": ("鞭炮", Strict_System_Card),
     "Tower Princess": ("公主塔", Princess_Tower),
-    "Goblinstein": ("斯坦", Strict_System_Card),
+    "Goblinstein": ("斯坦", Building_The_Core),
     "Royal Chef": ("厨师塔", Royal_Towers),
     "P.E.K.K.A Evolution": ("觉醒大皮卡", Building_The_Core),
     "Cannoneer": ("炮塔", Royal_Towers),
@@ -265,7 +265,7 @@ translations = {
     "Barbarians": ("黄毛", God_of_Change),
     "Barbarian Hut": ("黄毛房", Strict_System_Card),
     "Goblin Machine": ("哥布林机甲", Strict_System_Card),
-    "Goblin Hut": ("茅房", Strict_System_Card),
+    "Goblin Hut": ("茅房", Universal_cards2),
     "Dart Goblin Evolution": ("觉醒吹箭", Strict_System_Card),
     "Rune Giant": ("符文巨人", Strict_System_Card),
     "Lumberjack Evolution": ("觉醒樵夫", God_of_Change),
@@ -273,6 +273,7 @@ translations = {
     "Hunter Evolution": ("觉醒猎人", Strict_System_Card),
     "Executioner Evolution": ("觉醒屠夫", Strict_System_Card),
     "Boss Bandit": ("刺客头领", Building_The_Core),
+    "Witch Evolution": ("觉醒女巫", Strict_System_Card),
 }
 
 
@@ -359,9 +360,11 @@ api_data={
       "name": "Witch",
       "id": 26000007,
       "maxLevel": 9,
+      "maxEvolutionLevel": 1,
       "elixirCost": 5,
       "iconUrls": {
-        "medium": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png"
+        "medium": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
+        "evolutionMedium": "https://api-assets.clashroyale.com/cardevolutions/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png"
       },
       "rarity": "epic"
     },
@@ -1191,7 +1194,7 @@ api_data={
       "name": "Goblin Hut",
       "id": 27000001,
       "maxLevel": 12,
-      "elixirCost": 5,
+      "elixirCost": 4,
       "iconUrls": {
         "medium": "https://api-assets.clashroyale.com/cards/300/l8ZdzzNLcwB4u7ihGgxNFQOjCT_njFuAhZr7D6PRF7E.png"
       },
