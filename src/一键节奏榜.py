@@ -274,6 +274,7 @@ translations = {
     "Executioner Evolution": ("觉醒屠夫", Strict_System_Card),
     "Boss Bandit": ("刺客头领", Building_The_Core),
     "Witch Evolution": ("觉醒女巫", Strict_System_Card),
+    "Inferno Dragon Evolution": ("觉醒地狱龙", Universal_cards2)
 }
 
 
@@ -682,9 +683,11 @@ api_data={
       "name": "Inferno Dragon",
       "id": 26000037,
       "maxLevel": 6,
+      "maxEvolutionLevel": 1,
       "elixirCost": 4,
       "iconUrls": {
-        "medium": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png"
+        "medium": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
+        "evolutionMedium": "https://api-assets.clashroyale.com/cardevolutions/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png"
       },
       "rarity": "legendary"
     },
