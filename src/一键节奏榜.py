@@ -1652,20 +1652,63 @@ new_html_template = """
     #floatingMenu {{
       position: absolute;
       display: none;
-      background-color: #fff;
-      border: 1px solid #888;
-      border-radius: 3px;
-      padding: 5px;
+      background-color: #2d2d2d;
+      border: 1px solid #555;
+      border-radius: 6px;
+      padding: 8px 0;
       z-index: 1000;
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      min-width: 150px;
     }}
+    
     #floatingMenu div {{
-      padding: 5px 10px;
+      padding: 8px 16px;
       cursor: pointer;
       white-space: nowrap;
+      color: #e0e0e0;
+      font-size: 14px;
+      transition: all 0.2s;
+      position: relative;
     }}
-    #floatingMenu div:hover {{
-      background-color: #eee;
+    
+    #floatingMenu div:not(.separator):hover {{
+      background-color: #3a3a3a;
+    }}
+    
+    #floatingMenu div.rating-option {{
+      display: flex;
+      align-items: center;
+    }}
+    
+    #floatingMenu div.rating-option::before {{
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+      margin-right: 10px;
+    }}
+    
+    #floatingMenu div[data-rating="超模真神"]::before {{ background-color: #f44336; }}
+    #floatingMenu div[data-rating="版本强势"]::before {{ background-color: #ff9800; }}
+    #floatingMenu div[data-rating="中规中矩"]::before {{ background-color: #ffeb3b; }}
+    #floatingMenu div[data-rating="环境低谷"]::before {{ background-color: #2196f3; }}
+    #floatingMenu div[data-rating="史"]::before {{ background-color: #4caf50; }}
+    
+    #floatingMenu div.delete-option {{
+      color: #ff5252;
+      font-weight: bold;
+      margin-top: 5px;
+      padding-top: 10px;
+      border-top: 1px solid #444;
+    }}
+    
+    #floatingMenu div.separator {{
+      height: 1px;
+      background-color: #444;
+      padding: 0;
+      margin: 8px 0;
+      cursor: default;
     }}
   </style>
 </head>
@@ -1690,11 +1733,13 @@ new_html_template = """
   </div>
 
   <div id="floatingMenu">
-    <div data-rating="超模真神">超模真神</div>
-    <div data-rating="版本强势">版本强势</div>
-    <div data-rating="中规中矩">中规中矩</div>
-    <div data-rating="环境低谷">环境低谷</div>
-    <div data-rating="史">史</div>
+    <div class="rating-option" data-rating="超模真神">超模真神</div>
+    <div class="rating-option" data-rating="版本强势">版本强势</div>
+    <div class="rating-option" data-rating="中规中矩">中规中矩</div>
+    <div class="rating-option" data-rating="环境低谷">环境低谷</div>
+    <div class="rating-option" data-rating="史">史</div>
+    <div class="separator"></div>
+    <div class="delete-option" data-action="delete">删除卡牌</div>
   </div>
 
   <script>
@@ -1739,12 +1784,22 @@ new_html_template = """
     floatingMenu.querySelectorAll('div').forEach(item => {{
       item.addEventListener('click', function() {{
         const rating = this.getAttribute('data-rating');
-        const container = document.getElementById("rating-" + rating);
-        if (container && currentCard) {{
-          container.appendChild(currentCard.cloneNode(true));
+        const action = this.getAttribute('data-action');
+        
+        if (rating && currentCard) {{
+          const container = document.getElementById("rating-" + rating);
+          if (container) {{
+            container.appendChild(currentCard.cloneNode(true));
+            currentCard.remove();
+            toggleUnranked();
+          }}
+        }}
+        else if (action === "delete" && currentCard) {{
+          // 删除卡片
           currentCard.remove();
           toggleUnranked();
         }}
+        
         floatingMenu.style.display = "none";
         currentCard = null;
       }});
