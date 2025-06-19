@@ -1689,12 +1689,6 @@ new_html_template = """
       margin-right: 10px;
     }}
     
-    #floatingMenu div[data-rating="超模真神"]::before {{ background-color: #f44336; }}
-    #floatingMenu div[data-rating="版本强势"]::before {{ background-color: #ff9800; }}
-    #floatingMenu div[data-rating="中规中矩"]::before {{ background-color: #ffeb3b; }}
-    #floatingMenu div[data-rating="环境低谷"]::before {{ background-color: #2196f3; }}
-    #floatingMenu div[data-rating="史"]::before {{ background-color: #4caf50; }}
-    
     #floatingMenu div.delete-option {{
       color: #ff5252;
       font-weight: bold;
@@ -1733,11 +1727,6 @@ new_html_template = """
   </div>
 
   <div id="floatingMenu">
-    <div class="rating-option" data-rating="超模真神">超模真神</div>
-    <div class="rating-option" data-rating="版本强势">版本强势</div>
-    <div class="rating-option" data-rating="中规中矩">中规中矩</div>
-    <div class="rating-option" data-rating="环境低谷">环境低谷</div>
-    <div class="rating-option" data-rating="史">史</div>
     <div class="separator"></div>
     <div class="delete-option" data-action="delete">删除卡牌</div>
   </div>
@@ -1758,8 +1747,67 @@ new_html_template = """
     }}
   
     // 右键菜单功能
+    // 更新浮动菜单中的评级选项（修复顺序问题）
+    function updateRatingOptions() {{
+      const menu = document.getElementById('floatingMenu');
+      
+      // 移除旧的评级选项（保留分隔符和删除选项）
+      const oldOptions = menu.querySelectorAll('.rating-option');
+      oldOptions.forEach(option => option.remove());
+      
+      // 获取所有评级行（按页面顺序）
+      const ratingRows = Array.from(document.querySelectorAll('.ranking-table tr')).filter(row => 
+        row.classList.contains('超模真神') || 
+        row.classList.contains('版本强势') ||
+        row.classList.contains('中规中矩') ||
+        row.classList.contains('环境低谷') ||
+        row.classList.contains('史')
+      );
+      
+      // 动态创建新的评级选项（保持与页面相同的顺序）
+      ratingRows.forEach(row => {{
+        const ratingClass = Array.from(row.classList).find(cls => 
+          ['超模真神', '版本强势', '中规中矩', '环境低谷', '史'].includes(cls));
+        
+        const titleCell = row.querySelector('.editable-title');
+        if (titleCell) {{
+          const title = titleCell.textContent;
+          const option = document.createElement('div');
+          option.className = 'rating-option';
+          option.dataset.rating = ratingClass;
+          
+          // 添加颜色指示器
+          const colorIndicator = document.createElement('span');
+          colorIndicator.style.display = 'inline-block';
+          colorIndicator.style.width = '12px';
+          colorIndicator.style.height = '12px';
+          colorIndicator.style.borderRadius = '2px';
+          colorIndicator.style.marginRight = '10px';
+          colorIndicator.style.backgroundColor = getComputedStyle(row).backgroundColor;
+          
+          option.appendChild(colorIndicator);
+          option.appendChild(document.createTextNode(title));
+          
+          // 在分隔符之前添加选项（保持正确顺序）
+          const separator = menu.querySelector('.separator');
+          menu.insertBefore(option, separator);
+        }}
+      }});
+    }}
+    
+    // 监听标题编辑事件
+    document.querySelectorAll('.editable-title').forEach(title => {{
+      title.addEventListener('DOMSubtreeModified', () => {{
+        updateRatingOptions();
+      }});
+    }});
+    
+    // 右键菜单功能
     let currentCard = null;
     const floatingMenu = document.getElementById('floatingMenu');
+    
+    // 初始化浮动菜单
+    updateRatingOptions();
 
     document.addEventListener('contextmenu', function(e) {{
       const card = e.target.closest('.card');
@@ -1781,28 +1829,29 @@ new_html_template = """
     }});
 
     // 菜单点击事件
-    floatingMenu.querySelectorAll('div').forEach(item => {{
-      item.addEventListener('click', function() {{
-        const rating = this.getAttribute('data-rating');
-        const action = this.getAttribute('data-action');
-        
-        if (rating && currentCard) {{
-          const container = document.getElementById("rating-" + rating);
-          if (container) {{
-            container.appendChild(currentCard.cloneNode(true));
-            currentCard.remove();
-            toggleUnranked();
-          }}
-        }}
-        else if (action === "delete" && currentCard) {{
-          // 删除卡片
+    floatingMenu.addEventListener('click', function(e) {{
+      const item = e.target.closest('div');
+      if (!item) return;
+      
+      const rating = item.getAttribute('data-rating');
+      const action = item.getAttribute('data-action');
+      
+      if (rating && currentCard) {{
+        const container = document.getElementById("rating-" + rating);
+        if (container) {{
+          container.appendChild(currentCard.cloneNode(true));
           currentCard.remove();
           toggleUnranked();
         }}
-        
-        floatingMenu.style.display = "none";
-        currentCard = null;
-      }});
+      }} 
+      else if (action === "delete" && currentCard) {{
+        // 删除卡片
+        currentCard.remove();
+        toggleUnranked();
+      }}
+      
+      floatingMenu.style.display = "none";
+      currentCard = null;
     }});
 
     // 拖动功能
