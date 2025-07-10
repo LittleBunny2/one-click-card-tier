@@ -274,7 +274,9 @@ translations = {
     "Executioner Evolution": ("觉醒屠夫", Strict_System_Card),
     "Boss Bandit": ("刺客头领", Building_The_Core),
     "Witch Evolution": ("觉醒女巫", Strict_System_Card),
-    "Inferno Dragon Evolution": ("觉醒地狱龙", Universal_cards2)
+    "Inferno Dragon Evolution": ("觉醒地狱龙", Universal_cards2),
+    "Skeleton Barrel Evolution": ("觉醒骨球", Win_Condition),
+    "Spirit Empress": ("精灵女皇", Strict_System_Card)
 }
 
 
@@ -887,9 +889,11 @@ api_data={
       "name": "Skeleton Barrel",
       "id": 26000056,
       "maxLevel": 14,
+      "maxEvolutionLevel": 1,
       "elixirCost": 3,
       "iconUrls": {
-        "medium": "https://api-assets.clashroyale.com/cards/300/vCB4DWCcrGbTkarjcOiVz4aNDx6GWLm0yUepg9E1MGo.png"
+        "medium": "https://api-assets.clashroyale.com/cards/300/vCB4DWCcrGbTkarjcOiVz4aNDx6GWLm0yUepg9E1MGo.png",
+        "evolutionMedium": "https://api-assets.clashroyale.com/cardevolutions/300/vCB4DWCcrGbTkarjcOiVz4aNDx6GWLm0yUepg9E1MGo.png"
       },
       "rarity": "common"
     },
@@ -1535,6 +1539,16 @@ api_data={
         "medium": "https://api-assets.clashroyale.com/cards/300/OQPfGgT5mHEUvPuKKt0plZT0PNtIjCqUgQ3Rm86dQ2k.png"
       },
       "rarity": "epic"
+    },
+    {
+      "name": "Spirit Empress",
+      "id": 28000025,
+      "maxLevel": 6,
+      "elixirCost": 6,
+      "iconUrls": {
+        "medium": "https://api-assets.clashroyale.com/cards/300/MWWBZqiQeRBXSqEITVMj46nO_uCIUsqBidvUw9K2twY.png"
+      },
+      "rarity": "legendary"
     }
   ],
   "supportItems": [
