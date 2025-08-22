@@ -261,7 +261,7 @@ translations = {
     "P.E.K.K.A": ("大皮卡", Building_The_Core),
     "Mirror": ("镜像", Strict_System_Card),
     "Suspicious Bush": ("草丛", Win_Condition),
-    "Furnace": ("锅炉", Strict_System_Card),
+    "Furnace": ("锅炉", Universal_cards2),
     "Barbarians": ("黄毛", God_of_Change),
     "Barbarian Hut": ("黄毛房", Strict_System_Card),
     "Goblin Machine": ("哥布林机甲", Strict_System_Card),
@@ -276,7 +276,8 @@ translations = {
     "Witch Evolution": ("觉醒女巫", Strict_System_Card),
     "Inferno Dragon Evolution": ("觉醒地狱龙", Universal_cards2),
     "Skeleton Barrel Evolution": ("觉醒骨球", Win_Condition),
-    "Spirit Empress": ("精灵女皇", Strict_System_Card)
+    "Spirit Empress": ("精灵女皇", Strict_System_Card),
+    "Furnace Evolution": ("觉醒锅炉", Universal_cards2)
 }
 
 
@@ -1295,9 +1296,11 @@ api_data={
       "name": "Furnace",
       "id": 27000010,
       "maxLevel": 12,
+      "maxEvolutionLevel": 1,
       "elixirCost": 4,
       "iconUrls": {
-        "medium": "https://api-assets.clashroyale.com/cards/300/iqbDiG7yYRIzvCPXdt9zPb3IvMt7F7Gi4wIPnh2x4aI.png"
+        "medium": "https://api-assets.clashroyale.com/cards/300/iqbDiG7yYRIzvCPXdt9zPb3IvMt7F7Gi4wIPnh2x4aI.png",
+        "evolutionMedium": "https://api-assets.clashroyale.com/cardevolutions/300/iqbDiG7yYRIzvCPXdt9zPb3IvMt7F7Gi4wIPnh2x4aI.png"
       },
       "rarity": "rare"
     },
