@@ -126,7 +126,7 @@ translations = {
     "Skeletons Evolution": ("觉醒小骷髅", Universal_cards1),
     "Royal Ghost": ("皇家幽灵", Universal_cards1),
     "Goblin Drill": ("钻机", Win_Condition),
-    "Tesla": ("电塔", Universal_cards2),
+    "Tesla": ("电塔", God_of_Change),
     "Bats Evolution": ("觉醒蝙蝠", Strict_System_Card),
     "Knight Evolution": ("觉醒骑士", Universal_cards1),
     "Graveyard": ("墓园", Win_Condition),
@@ -148,8 +148,8 @@ translations = {
     "Rage": ("狂暴", Regular_Minor_Spells),
     "Archers Evolution": ("觉醒AC", Universal_cards1),
     "Lava Hound": ("天狗", Win_Condition),
-    "Bomb Tower": ("炸弹塔", Universal_cards2),
-    "Skeleton King": ("骨王", Universal_cards2),
+    "Bomb Tower": ("炸弹塔", God_of_Change),
+    "Skeleton King": ("骨王", Strict_System_Card),
     "Goblin Gang": ("哥布林团伙", Universal_cards1),
     "Fisherman": ("渔夫", Universal_cards1),
     "Mega Minion": ("铁甲", Universal_cards1),
@@ -157,7 +157,7 @@ translations = {
     "Battle Ram": ("攻城锤", Win_Condition),
     "Baby Dragon": ("龙宝", God_of_Change),
     "Mother Witch": ("女巫婆婆", God_of_Change),
-    "Tesla Evolution": ("觉醒电塔", Universal_cards2),
+    "Tesla Evolution": ("觉醒电塔", God_of_Change),
     "Royal Giant Evolution": ("觉醒家驹", Win_Condition),
     "Giant Snowball": ("雪球", Regular_Minor_Spells),
     "Mega Knight": ("超骑", Building_The_Core),
@@ -276,8 +276,10 @@ translations = {
     "Witch Evolution": ("觉醒女巫", Strict_System_Card),
     "Inferno Dragon Evolution": ("觉醒地狱龙", Universal_cards2),
     "Skeleton Barrel Evolution": ("觉醒骨球", Win_Condition),
-    "Spirit Empress": ("精灵女皇", Strict_System_Card),
-    "Furnace Evolution": ("觉醒锅炉", Universal_cards2)
+    "Spirit Empress": ("龙女", Strict_System_Card),
+    "Furnace Evolution": ("觉醒锅炉", Universal_cards2),
+    "Vines": ("藤蔓", Regular_Minor_Spells),
+    "Baby Dragon Evolution": ("觉醒龙宝", Universal_cards2),
 }
 
 
@@ -456,9 +458,11 @@ api_data={
       "name": "Baby Dragon",
       "id": 26000015,
       "maxLevel": 9,
+      "maxEvolutionLevel": 1,
       "elixirCost": 4,
       "iconUrls": {
-        "medium": "https://api-assets.clashroyale.com/cards/300/cjC9n4AvEZJ3urkVh-rwBkJ-aRSsydIMqSAV48hAih0.png"
+        "medium": "https://api-assets.clashroyale.com/cards/300/cjC9n4AvEZJ3urkVh-rwBkJ-aRSsydIMqSAV48hAih0.png",
+        "evolutionMedium": "https://api-assets.clashroyale.com/cardevolutions/300/cjC9n4AvEZJ3urkVh-rwBkJ-aRSsydIMqSAV48hAih0.png"
       },
       "rarity": "epic"
     },
@@ -1552,6 +1556,16 @@ api_data={
         "medium": "https://api-assets.clashroyale.com/cards/300/MWWBZqiQeRBXSqEITVMj46nO_uCIUsqBidvUw9K2twY.png"
       },
       "rarity": "legendary"
+    },
+    {
+      "name": "Vines",
+      "id": 28000026,
+      "maxLevel": 9,
+      "elixirCost": 3,
+      "iconUrls": {
+        "medium": "https://api-assets.clashroyale.com/cards/300/V5sJlPuo2WBRtirJ1lGEPJA4NvQ0KPwFeMrpxLX5z_8.png"
+      },
+      "rarity": "epic"
     }
   ],
   "supportItems": [
