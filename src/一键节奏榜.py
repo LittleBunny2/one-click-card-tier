@@ -280,6 +280,8 @@ translations = {
     "Furnace Evolution": ("觉醒锅炉", Universal_cards2),
     "Vines": ("藤蔓", Regular_Minor_Spells),
     "Baby Dragon Evolution": ("觉醒龙宝", Universal_cards2),
+    "Skeleton Army Evolution": ("觉醒骷髅海", Strict_System_Card),
+    "Royal Ghost Evolution": ("觉醒幽灵", Universal_cards1),
 }
 
 
@@ -424,9 +426,11 @@ api_data={
       "name": "Skeleton Army",
       "id": 26000012,
       "maxLevel": 9,
+      "maxEvolutionLevel": 1,
       "elixirCost": 3,
       "iconUrls": {
-        "medium": "https://api-assets.clashroyale.com/cards/300/fAOToOi1pRy7svN2xQS6mDkhQw2pj9m_17FauaNqyl4.png"
+        "medium": "https://api-assets.clashroyale.com/cards/300/fAOToOi1pRy7svN2xQS6mDkhQw2pj9m_17FauaNqyl4.png",
+        "evolutionMedium": "https://api-assets.clashroyale.com/cardevolutions/300/fAOToOi1pRy7svN2xQS6mDkhQw2pj9m_17FauaNqyl4.png"
       },
       "rarity": "epic"
     },
@@ -832,9 +836,11 @@ api_data={
       "name": "Royal Ghost",
       "id": 26000050,
       "maxLevel": 6,
+      "maxEvolutionLevel": 1,
       "elixirCost": 3,
       "iconUrls": {
-        "medium": "https://api-assets.clashroyale.com/cards/300/3En2cz0ISQAaMTHY3hj3rTveFN2kJYq-H4VxvdJNvCM.png"
+        "medium": "https://api-assets.clashroyale.com/cards/300/3En2cz0ISQAaMTHY3hj3rTveFN2kJYq-H4VxvdJNvCM.png",
+        "evolutionMedium": "https://api-assets.clashroyale.com/cardevolutions/300/3En2cz0ISQAaMTHY3hj3rTveFN2kJYq-H4VxvdJNvCM.png"
       },
       "rarity": "legendary"
     },
