@@ -87,7 +87,7 @@ card_data = {
 
 # 翻译和修正数数据
 Princess_Tower= 0.2
-Royal_Towers= 0.4
+Royal_Towers= 0.7
 Regular_Minor_Spells= 0.3
 Universal_Major_Spell= 0.5
 Unconventional_Spells= 0.9
@@ -100,7 +100,7 @@ Win_Condition= 1
 
 """
 公主塔：0.2
-其余皇家塔楼：0.4
+其余皇家塔楼：0.7
 
 常规小法术（费用<=3）：0.3
 泛用型中大法术：0.5
@@ -174,7 +174,7 @@ translations = {
     "Barbarian Barrel": ("滚筒", Regular_Minor_Spells),
     "Goblins": ("哥布林", Universal_cards1),
     "Barbarians Evolution": ("觉醒黄毛", God_of_Change),
-    "Royal Hogs": ("家猪", Win_Condition),
+    "Royal Hogs": ("四猪", Win_Condition),
     "Tombstone": ("墓碑", Universal_cards1),
     "Cannon": ("加农炮", Universal_cards1),
     "Mortar Evolution": ("觉醒迫击炮", Win_Condition),
@@ -282,6 +282,7 @@ translations = {
     "Baby Dragon Evolution": ("觉醒龙宝", Universal_cards2),
     "Skeleton Army Evolution": ("觉醒骷髅海", Strict_System_Card),
     "Royal Ghost Evolution": ("觉醒幽灵", Universal_cards1),
+    "Royal Hogs Evolution": ("觉醒四猪", Win_Condition)
 }
 
 
@@ -934,9 +935,11 @@ api_data={
       "name": "Royal Hogs",
       "id": 26000059,
       "maxLevel": 12,
+      "maxEvolutionLevel": 1,
       "elixirCost": 5,
       "iconUrls": {
-        "medium": "https://api-assets.clashroyale.com/cards/300/ASSQJG_MoVq9e81HZzo4bynMnyLNpNJMfSLb3hqydOw.png"
+        "medium": "https://api-assets.clashroyale.com/cards/300/ASSQJG_MoVq9e81HZzo4bynMnyLNpNJMfSLb3hqydOw.png",
+        "evolutionMedium": "https://api-assets.clashroyale.com/cardevolutions/300/ASSQJG_MoVq9e81HZzo4bynMnyLNpNJMfSLb3hqydOw.png"
       },
       "rarity": "rare"
     },
